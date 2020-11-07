@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Layout from '@/layout/AppLayout';
-import HelloWorld from '@/components/HelloWorld'
+import HomePage from '@/views/HomePage';
 
 Vue.use(VueRouter)
 
@@ -12,7 +12,7 @@ Vue.use(VueRouter)
     component: Layout,
     children: [{
       path: '/',
-      component: HelloWorld
+      component: HomePage
     }]
   }, 
 ]
