@@ -3,13 +3,12 @@
         id="app-footer"
         fixed
         horizontal
-        dark
+        background-color="primary"
     >
         <v-btn
             v-for="(btn, index) in buttons"
             :key="index"
             text
-            @click="jumpPage(btn.link)"
         >
             <span>{{btn.text}}</span>
         </v-btn>
