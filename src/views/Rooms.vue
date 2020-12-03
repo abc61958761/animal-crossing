@@ -1,9 +1,12 @@
 <template>
-    <v-main id="app-page">
-        <v-container fluid style="max-width: 960px; height: 100%">
-            <router-view />
-        </v-container>
-    </v-main>
+    <div id="rooms">
+        <!-- <v-row> -->
+            <v-card>123</v-card>
+            <v-card>123</v-card>
+        <!-- </v-row>
+        <v-row></v-row>
+        <v-row></v-row> -->
+    </div>
 </template>
 <script>
 export default {
@@ -21,3 +24,8 @@ export default {
     }
 }
 </script>
+<style lang="scss">
+#rooms {
+    display: flex;
+}
+</style>

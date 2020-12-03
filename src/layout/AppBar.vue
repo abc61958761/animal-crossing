@@ -1,23 +1,20 @@
 <template>
     <v-app-bar
         id="app-bar"
-        color="#222222"
         fixed
-        dark
         dense
         flat
+        color="primary"
     >
         <div class="app-bar-content">
             <v-spacer></v-spacer>
 
             <v-btn
-                class="d-none d-sm-flex"
                 v-for="(btn, index) in buttons"
                 :key="index"
-                text
-                @click="jumpPage(btn.link)"
+                icon
             >
-                <span>{{btn.text}}</span>
+                <v-icon>mdi-heart</v-icon>
             </v-btn>
         </div>
     </v-app-bar>

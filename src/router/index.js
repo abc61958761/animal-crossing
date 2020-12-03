@@ -2,6 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Layout from '@/layout/AppLayout';
 import HomePage from '@/views/HomePage';
+import Login from '@/views/Login';
+import Rooms from '@/views/Rooms';
 
 Vue.use(VueRouter)
 
@@ -12,7 +14,25 @@ Vue.use(VueRouter)
     component: Layout,
     children: [{
       path: '/',
-      component: HomePage
+      component: HomePage,
+      meta: {
+        isAppBar: false,
+        isAppFooter: false
+      }
+    }, {
+      path: '/login',
+      component: Login,
+      meta: {
+        isAppBar: false,
+        isAppFooter: false
+      }
+    }, {
+      path: '/rooms',
+      component: Rooms,
+      meta: {
+        isAppBar: true,
+        isAppFooter: true
+      }
     }]
   }, 
 ]

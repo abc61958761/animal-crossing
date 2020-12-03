@@ -1,6 +1,8 @@
 <template>
   <v-app id="app">
-    <router-view />
+    <v-img src="./assets/background.png">
+      <router-view />
+    </v-img>
   </v-app>
 </template>
 
@@ -13,3 +15,8 @@ export default {
   }),
 };
 </script>
+<style lang="scss">
+// button {
+//   border-radius: 10px!important;
+// }
+</style>
