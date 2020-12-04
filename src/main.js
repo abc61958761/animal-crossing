@@ -1,11 +1,13 @@
 import Vue from 'vue'
 import App from './App.vue'
 import vuetify from './plugins/vuetify';
-import router from './router';
+import { createRouter } from './router';
 import { createStore } from './store';
 
-const store = createStore();
 Vue.config.productionTip = false
+
+const store = createStore();
+const router = createRouter(store);
 
 new Vue({
   vuetify,
