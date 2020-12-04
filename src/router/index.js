@@ -37,10 +37,27 @@ Vue.use(VueRouter)
   }, 
 ]
 
-const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
-  routes
-})
+export function createRouter(store) {
+  const router = new VueRouter({
+    mode: 'history',
+    base: process.env.BASE_URL,
+    routes
+  })
 
-export default router
+  router.beforeEach((to, from, next) => {
+    if (to.matched.some(record => record.meta.isAppBar)) {
+      store.dispatch('setIsAppBar', true);
+    } else {
+      store.dispatch('setIsAppBar', false);
+    }
+    if (to.matched.some(record => record.meta.isAppFooter)) {
+      store.dispatch('setIsAppFooter', true);
+    } else {
+        store.dispatch('setIsAppFooter', false);
+    }
+
+    next();
+  })
+
+  return router
+}
