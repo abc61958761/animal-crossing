@@ -4,6 +4,7 @@ import Layout from '@/layout/AppLayout';
 import HomePage from '@/views/HomePage';
 import Login from '@/views/Login';
 import Rooms from '@/views/Rooms';
+import Establish from '@/views/Establish';
 
 Vue.use(VueRouter)
 
@@ -19,22 +20,32 @@ Vue.use(VueRouter)
         isAppBar: false,
         isAppFooter: false
       }
-    }, {
+    }, 
+    {
       path: '/login',
       component: Login,
       meta: {
         isAppBar: false,
         isAppFooter: false
       }
-    }, {
+    },
+    {
       path: '/rooms',
       component: Rooms,
       meta: {
         isAppBar: true,
         isAppFooter: true
       }
+    },
+    {
+      path: '/establish',
+      component: Establish,
+      meta: {
+        isAppBar: false,
+        isAppFooter: false
+      },
     }]
-  }, 
+  }
 ]
 
 export function createRouter(store) {
@@ -53,9 +64,8 @@ export function createRouter(store) {
     if (to.matched.some(record => record.meta.isAppFooter)) {
       store.dispatch('setIsAppFooter', true);
     } else {
-        store.dispatch('setIsAppFooter', false);
+      store.dispatch('setIsAppFooter', false);
     }
-
     next();
   })
 
