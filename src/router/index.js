@@ -4,7 +4,6 @@ import Layout from '@/layout/AppLayout';
 import HomePage from '@/views/HomePage';
 import Login from '@/views/Login';
 import Rooms from '@/views/Rooms';
-import Establish from '@/views/Establish';
 
 Vue.use(VueRouter)
 
@@ -36,15 +35,8 @@ Vue.use(VueRouter)
         isAppBar: true,
         isAppFooter: true
       }
-    },
-    {
-      path: '/establish',
-      component: Establish,
-      meta: {
-        isAppBar: false,
-        isAppFooter: false
-      },
-    }]
+    }
+  ]
   }
 ]
 

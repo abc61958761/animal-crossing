@@ -1,17 +1,15 @@
 <template>
   <v-app id="app">
-    <v-img  :class="$route.path=='/establish'? '': 'background'">
+    <v-img src="./assets/background.png">
       <router-view />
     </v-img>
   </v-app>
 </template>
 
 <script>
-
 export default {
-  name: 'App',
+  name: "App",
   data: () => ({
-    
     //
   }),
 };
@@ -20,7 +18,4 @@ export default {
 // button {
 //   border-radius: 10px!important;
 // }
-.background{
-  background-image:url('./assets/background.png')
-}
 </style>
