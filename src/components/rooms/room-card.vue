@@ -16,10 +16,19 @@
                     更多資訊
                 </v-btn>
 
-                <v-btn color="orange">
+                <v-btn @click="joinRoom" color="orange">
                     加入排隊
                 </v-btn>
             </v-row>
         </v-card-actions>
     </v-card>
 </template>
+<script>
+export default {
+    methods: {
+        joinRoom() {
+            this.$router.push({ path: "room" })
+        }
+    }
+}
+</script>
