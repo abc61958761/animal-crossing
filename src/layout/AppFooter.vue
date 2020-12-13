@@ -9,8 +9,11 @@
             v-for="(btn, index) in buttons"
             :key="index"
             text
+            @click="jumpPage(btn.link)"
         >
             <span>{{btn.text}}</span>
+
+            <v-icon>{{btn.icon}}</v-icon>
         </v-btn>
     </v-bottom-navigation>
 </template>
@@ -18,11 +21,17 @@
 export default {
     data: () => ({
         buttons: [{
-            text: '關於我',
-            link: '/about-me'
+            text: '首頁',
+            link: '/rooms',
+            icon: "mdi-history"
         }, {
-            text: '關於專案',
-            link: '/about-project'
+            text: '我的房間',
+            link: '/my-room',
+            icon: "mdi-music-note"
+        }, {
+            text: '我的留言',
+            link: '/login',
+            icon: "mdi-map-marker"
         }]
     }),
     methods: {

@@ -1,15 +1,14 @@
 <template>
-  <v-app id="app">
-    <v-img src="./assets/background.png">
+  <v-app id="app" style="height: 100vh">
+    <!-- <v-img src="./assets/background.png"> -->
       <router-view />
-    </v-img>
+    <!-- </v-img> -->
   </v-app>
 </template>
 
 <script>
-
 export default {
-  name: 'App',
+  name: "App",
   data: () => ({
     //
   }),

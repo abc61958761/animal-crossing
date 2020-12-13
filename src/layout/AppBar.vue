@@ -23,11 +23,14 @@
 export default {
     data: () => ({
         buttons: [{
-            text: '關於我',
-            link: '/about-me'
+            text: '首頁',
+            link: '/login'
         }, {
-            text: '關於專案',
-            link: '/about-project'
+            text: '我的房間',
+            link: '/rooms'
+        }, {
+            text: '我的留言',
+            link: '/rooms'
         }]
     }),
     methods: {
