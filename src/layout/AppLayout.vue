@@ -1,7 +1,7 @@
 <template>
     <div id="app-layput" class="v-application--wrap overflow-hidden">
         <app-bar v-if="isAppBar"/>
-        <app-page :class="{ appPagePadding: isAppBar }"/>
+        <app-page :class="{ appPagePadding: isAppBar }" style="height: 100vh"/>
         <app-footer v-if="isAppFooter" />
     </div>
 </template>
@@ -30,8 +30,8 @@ export default {
 .appPagePadding {
     padding: 48px 0px 56px 0px !important;
 
-    @media screen and (min-width: 600px) {
-        padding: 48px 0px 0px 0px !important;
-    }
+    // @media screen and (min-width: 600px) {
+    //     padding: 48px 0px 0px 0px !important;
+    // }
 }
 </style>

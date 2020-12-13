@@ -53,6 +53,7 @@ export default {
 <style lang="scss">
 #rooms {
   // display: flex;
+  overflow: scroll;
   height: 100%;
   .row > div {
     flex: 1;

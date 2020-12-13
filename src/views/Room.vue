@@ -1,5 +1,5 @@
 <template>
-    <div id="room">
+    <div id="room" class="d-flex flex-column" :class="{'roomScroll': $vuetify.breakpoint.xs}">
         <v-card>
             <v-card-title>
                 房間資訊
@@ -35,59 +35,34 @@
                 </div>
             </v-expand-transition>
         </v-card>
-        <v-tabs
-            v-model="tab"
-            background-color="transparent"
-            color="basil"
-            grow
-        >
-            <v-tab
-                v-for="(item, index) in tabItems"
-                :key="index"
-            >
-                {{ item.text }}
-            </v-tab>
-        </v-tabs>
-
-        <v-tabs-items v-model="tab">
-            <v-tab-item
-                v-for="(item, index) in tabItems"
-                :key="index"
-            >
-                <component :is="item.component"></component>
-            </v-tab-item>
-        </v-tabs-items>
+        <mobile-room />
+        <destop-room />
     </div>
 </template>
 <script>
-import ChatRoom from '@/components/room/chat-room';
-import Queue from '@/components/room/queue';
+import MobileRoom from '@/components/room/mobile-room';
+import DestopRoom from '@/components/room/destop-room';
 
 export default {
     data: () => {
         return {
-            show: true,
-            tab: null,
-            tabItems: [{
-                text: '聊聊',
-                component: 'chat-room'
-            }, {
-                text: '隊伍',
-                component: 'queue'
-            }, {
-                text: '已邀請',
-                component: 'queue'
-            }]
+            show: true
         }
     },
     components: {
-        'chat-room': ChatRoom,
-        'queue': Queue
+        'mobile-room': MobileRoom,
+        'destop-room': DestopRoom
     },
 }
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
+#room {
+    height: 100%;
+}
 .card-text-margin {
     margin-top: -50px;
+}
+.roomScroll {
+    overflow: scroll;
 }
 </style>
