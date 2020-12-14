@@ -25,12 +25,21 @@
       solo
     ></v-select>
     <v-select class="mb-2" hide-details label="想做什麼？" solo></v-select>
-    <room-card class="mb-2" v-for="(item, index) in 3" :key="index"></room-card>
-    <Establish
-      :isdialog="isdialog"
-      @cancel="isdialog = false"
-      @build="isdialog = false"
-    ></Establish>
+    <v-layout wrap>
+      <v-flex  xs12 sm6 md6  v-for="(item, index) in 10" :key="index"> 
+        <room-card class="mb-2" 
+        :class="{
+          'mr-2': index%2 === 0 && !$vuetify.breakpoint.xs, 
+          'ml-2': index%2 !== 0 && !$vuetify.breakpoint.xs
+        }"></room-card>
+      </v-flex>
+    </v-layout>
+    <establish
+      :isdialog="isDialog"
+      @cancel="isDialog = false"
+      @build="isDialog = false"
+    ></establish>
+    
   </div>
 </template>
 <script>
@@ -40,12 +49,12 @@ import RoomCard from "@/components/rooms/room-card";
 export default {
   data() {
     return {
-      isdialog: false,
+      isDialog: false,
     };
   },
   components: {
     "room-card": RoomCard,
-    Establish,
+    "establish": Establish,
   },
   mounted() {},
 };
