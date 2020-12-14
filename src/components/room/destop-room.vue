@@ -1,8 +1,12 @@
 <template>
     <v-row class="d-none d-sm-flex" style="overflow: hidden">
         <v-col cols="4" class="d-flex flex-column" style="height: 100%;">
-            <queue style="flex: 1" class="mb-4"></queue>
-            <queue style="flex: 1"></queue>
+            <queue style="flex: 1" class="mb-4">
+                <template v-slot:title>隊伍</template>
+            </queue>
+            <queue style="flex: 1">
+                <template v-slot:title>已邀請</template>
+            </queue>
         </v-col>
         <v-col cols="8" class="d-flex flex-column" style="height: 100%;">
             <chat-room style="flex: 1"></chat-room>
