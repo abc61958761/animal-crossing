@@ -1,7 +1,9 @@
 <template>
     <div id="homePage">
-        <v-btn color="secondary" class="mb-4" @click="login">GOOGLE 登入</v-btn>
-        <v-btn click="login">FACEBOOK  登入</v-btn>
+        <img src="@/assets/title.svg" />
+        <hr class="my-6"/>
+        <v-btn color="secondary" class="mb-4 text-h5" @click="login" height="64">GOOGLE 登入</v-btn>
+        <v-btn click="login" height="64" color="accent" class="text-h5">FACEBOOK  登入</v-btn>
     </div>
 </template>
 <script>

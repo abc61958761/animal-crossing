@@ -25,9 +25,9 @@
                     </v-btn>
                 </template>
                 <v-list>
-                    <v-list-item two-line>
-                        <v-list-item-content>
-                            <v-list-item-title class="mb-2">Carol</v-list-item-title>
+                    <v-list-item two-line class="d-block text-center">
+                        <v-list-item-content class="character--text">
+                            <v-list-item-title class="mb-2 font-weight-bold">Carol</v-list-item-title>
                             <v-list-item-subtitle>小廢廢島</v-list-item-subtitle>
                         </v-list-item-content>
                         <v-list-item-action class="ma-1">
@@ -64,16 +64,8 @@ export default {
     }
 }
 .v-list-item{
-    display: block;
-    text-align: center;
     &__action > button{
         width: 100%;
-    }
-    &__content{
-        color: #666666;
-    }
-    &__title{
-        font-weight: bold;
     }
 }
 </style>

@@ -14,7 +14,7 @@
         hideDetails
       ></v-text-field>
     </div>
-    <v-btn height="56px" color="error" @click="submit">繼續</v-btn>
+    <v-btn height="56px" color="#A7A7A7" @click="submit" class="white--text">繼續</v-btn>
   </div>
 </template>
 <script>
