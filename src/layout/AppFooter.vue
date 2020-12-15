@@ -22,7 +22,7 @@ export default {
     data: () => ({
         buttons: [{
             text: '首頁',
-            link: '/rooms',
+            link: '/',
             icon: "mdi-history"
         }, {
             text: '我的房間',

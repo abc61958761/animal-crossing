@@ -4,7 +4,7 @@
       <v-card class="mr-2">
         <v-card-text>公告</v-card-text>
       </v-card>
-      <v-card class="ml-2" @click="isdialog = true">
+      <v-card class="ml-2" @click="isDialog = true">
         <v-card-text>
           <h2>開放島嶼</h2>
           <span>邀請其他人登島交流</span>
