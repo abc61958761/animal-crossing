@@ -1,5 +1,5 @@
 <template>
-  <v-dialog v-model="isdialog" persistent fullscreen>
+  <v-dialog v-model="isdialog" persistent  :fullscreen= $vuetify.breakpoint.xs>
     <v-card>
       <h2>建立房間</h2>
       <v-select

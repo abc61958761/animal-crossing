@@ -34,26 +34,14 @@
         }"></room-card>
       </v-flex>
     </v-layout>
-    <establish
-      :isdialog="isDialog"
-      @cancel="isDialog = false"
-      @build="isDialog = false"
-    ></establish>
   </div>
 </template>
 <script>
-import Establish from "@/components/Establish";
 import RoomCard from "@/components/rooms/room-card";
 
 export default {
-  data() {
-    return {
-      isDialog: false,
-    };
-  },
   components: {
     "room-card": RoomCard,
-    "establish": Establish,
   },
   mounted() {},
 };

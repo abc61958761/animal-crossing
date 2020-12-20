@@ -30,7 +30,7 @@ export default {
             icon: "mdi-music-note"
         }, {
             text: '我的留言',
-            link: '/login',
+            link: '/message',
             icon: "mdi-map-marker"
         }]
     }),

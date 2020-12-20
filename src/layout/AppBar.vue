@@ -31,7 +31,7 @@
                             <v-list-item-subtitle>小廢廢島</v-list-item-subtitle>
                         </v-list-item-content>
                         <v-list-item-action class="ma-1">
-                            <v-btn class="my-1" depressed color="primary" outlined>錯誤與回報</v-btn>
+                            <v-btn class="my-1" depressed color="primary" outlined @click="jumpPage('/report')">錯誤與回報</v-btn>
                             <v-btn depressed color="#109980" dark>登出</v-btn>
                         </v-list-item-action>
                     </v-list-item>
