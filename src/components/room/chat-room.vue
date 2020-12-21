@@ -9,3 +9,8 @@
         </v-card-actions>
     </v-card>
 </template>
+// <style lang="scss" scoped>
+// .v-card__text{
+//     overflow: hidden;
+// }
+// </style>

@@ -1,11 +1,11 @@
 <template>
   <div id="rooms">
     <v-row class="ma-0 mb-4" style="justify-content: space-around">
-      <v-card class="mr-2">
+      <v-card class="mr-2" color="secondary">
         <v-card-text>公告</v-card-text>
       </v-card>
-      <v-card class="ml-2" @click="isdialog = true">
-        <v-card-text>
+      <v-card class="ml-2" @click="isDialog = true" color="#7CACE3" dark>
+        <v-card-text class="pa-1">
           <h2>開放島嶼</h2>
           <span>邀請其他人登島交流</span>
         </v-card-text>
@@ -34,27 +34,14 @@
         }"></room-card>
       </v-flex>
     </v-layout>
-    <establish
-      :isdialog="isDialog"
-      @cancel="isDialog = false"
-      @build="isDialog = false"
-    ></establish>
-    
   </div>
 </template>
 <script>
-import Establish from "@/components/Establish";
 import RoomCard from "@/components/rooms/room-card";
 
 export default {
-  data() {
-    return {
-      isDialog: false,
-    };
-  },
   components: {
     "room-card": RoomCard,
-    "establish": Establish,
   },
   mounted() {},
 };

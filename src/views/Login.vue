@@ -14,13 +14,28 @@
         hideDetails
       ></v-text-field>
     </div>
-    <v-btn height="56px" color="error" @click="submit">繼續</v-btn>
+    <v-btn height="56px" color="#A7A7A7" @click="isDialog=true" class="white--text">繼續</v-btn>
+     <establish
+      :isdialog="isDialog"
+      @cancel="isDialog = false"
+      @build="submit"
+    ></establish>
   </div>
 </template>
 <script>
+import Establish from "@/components/Establish";
 export default {
+  data(){
+    return{
+      isDialog: false,
+    }
+  },
+  components:{
+    Establish
+  },
   methods: {
     submit() {
+      this.isDialog=false;
       this.$router.push({ path: "rooms" });
     },
   },

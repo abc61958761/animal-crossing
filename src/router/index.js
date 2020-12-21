@@ -6,6 +6,8 @@ import Login from '@/views/Login';
 import Rooms from '@/views/Rooms';
 import Room from '@/views/Room';
 import MyRoom from '@/views/MyRoom';
+import Message from '@/views/Message'
+import Report from '@/views/Report'
 
 Vue.use(VueRouter)
 
@@ -49,6 +51,22 @@ Vue.use(VueRouter)
     {
       path: '/my-room',
       component: MyRoom,
+      meta: {
+        isAppBar: true,
+        isAppFooter: true
+      }
+    },
+    {
+      path: '/message',
+      component: Message,
+      meta: {
+        isAppBar: true,
+        isAppFooter: true
+      }
+    },
+    {
+      path: '/report',
+      component: Report,
       meta: {
         isAppBar: true,
         isAppFooter: true
