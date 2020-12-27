@@ -24,7 +24,7 @@
       ></v-textarea>
     <div class="mt-4 d-flex" :class="$vuetify.breakpoint.xs ? 'justify-space-between': 'justify-end'">
       <v-btn height="56" text color="#109980" width="150" depressed>取消</v-btn>
-      <v-btn height="56" color="#109980" class="white--text" width="150" depressed>回報</v-btn>
+      <v-btn height="56" color="#109980" class="white--text" width="150" depressed @click="$router.push('/message')">回報</v-btn>
     </div>
     </div>
 </template>

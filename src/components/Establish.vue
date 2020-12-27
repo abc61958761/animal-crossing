@@ -1,7 +1,7 @@
 <template>
-  <v-dialog v-model="isdialog" persistent  :fullscreen= $vuetify.breakpoint.xs>
-    <v-card>
-      <h2>建立房間</h2>
+  <v-dialog v-model="isdialog" persistent  :fullscreen= $vuetify.breakpoint.xs width="960px">
+    <v-card class="px-4">
+      <h2 class="primary--text text-center font-weight-bold pt-4" :class="{'pt-8': $vuetify.breakpoint.xs}">建立房間</h2>
       <v-select
         dense
         hide-details
@@ -50,7 +50,7 @@
         hide-details
         placeholder="公告欄（選填）"
       ></v-textarea>
-      <v-card-actions>
+      <v-card-actions class="pa-0 justify-end" :class="{'justify-space-between': $vuetify.breakpoint.xs}" >
         <v-btn
           color="primary"
           text
@@ -82,20 +82,15 @@ export default {
 ::v-deep .v-text-field--outlined fieldset {
   border-color: #58bca9;
 }
+@media screen and (max-width: 600px){
+  .v-input {
+    margin: 16px 0px;
+  }
+}
 .v-input {
-  margin: 16px 0px;
+    margin: 12px 0px;
 }
 .v-dialog--fullscreen > .v-card {
   padding: 0px 16px !important;
-  h2 {
-    color: #58bca9;
-    font-weight: 500;
-    text-align: center;
-    padding-top: 90px;
-  }
-}
-.v-card__actions {
-  padding: 0px;
-  justify-content: space-between;
 }
 </style>
