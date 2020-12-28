@@ -20,11 +20,10 @@
     <v-select
       class="mb-2"
       hide-details
-      color="purple"
       label="類型"
       solo
     ></v-select>
-    <v-select class="mb-2" hide-details label="想做什麼？" solo></v-select>
+    <v-select class="mb-2" hide-details label="想做什麼？" solo ></v-select>
     <v-layout wrap>
       <v-flex  xs12 sm6 md6  v-for="(item, index) in 10" :key="index"> 
         <room-card class="mb-2" 
@@ -46,7 +45,7 @@ export default {
   mounted() {},
 };
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 #rooms {
   // display: flex;
   overflow: scroll;
@@ -57,5 +56,11 @@ export default {
     padding: 12px;
     align-items: center;
   }
+}
+::v-deep .v-label{
+ color: #58bca9;
+}
+::v-deep .v-icon::before{
+  color: #58bca9;
 }
 </style>
