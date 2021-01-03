@@ -50,7 +50,7 @@
         hide-details
         placeholder="公告欄（選填）"
       ></v-textarea>
-      <v-card-actions class="pa-0 justify-end" :class="{'justify-space-between': $vuetify.breakpoint.xs}" >
+      <v-card-actions class="pa-0 pb-6 justify-end" :class="{'justify-space-between': $vuetify.breakpoint.xs}" >
         <v-btn
           color="primary"
           text

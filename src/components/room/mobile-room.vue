@@ -1,9 +1,7 @@
 <template>
-    <div class="d-sm-none" style="height: 477px; padding-bottom: 56px; margin-top:16px">
+    <v-card class="d-sm-none mt-4 mb-2" style="height: 477px;">
         <v-tabs
             v-model="tab"
-            background-color="transparent"
-            color="basil"
             grow
         >
             <v-tab
@@ -22,7 +20,7 @@
                 <component class="d-flex flex-column" :is="item.component"></component>
             </v-tab-item>
         </v-tabs-items>
-    </div>
+    </v-card>
 </template>
 <script>
 import ChatRoom from '@/components/room/chat-room';

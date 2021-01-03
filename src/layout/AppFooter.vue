@@ -4,15 +4,16 @@
         fixed
         horizontal
         background-color="primary"
+        class="d-flex d-sm-none"
     >
         <v-btn
             v-for="(btn, index) in buttons"
             :key="index"
             text
+            dark
             @click="jumpPage(btn.link)"
         >
             <span>{{btn.text}}</span>
-
             <v-icon>{{btn.icon}}</v-icon>
         </v-btn>
     </v-bottom-navigation>
