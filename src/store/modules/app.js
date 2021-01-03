@@ -11,7 +11,7 @@ const app = {
     },
     SET_IS_APP_FOOTER(state, criteria) {
       state.isAppFooter = criteria;
-    },
+    }
   },
   actions: {
     setIsAppBar({ commit }, criteria) {
@@ -19,7 +19,7 @@ const app = {
     },
     setIsAppFooter({ commit }, criteria) {
       commit('SET_IS_APP_FOOTER', criteria);
-    },
+    }
   },
   getters: {
     getAppBar(state) {

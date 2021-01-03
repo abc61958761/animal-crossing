@@ -23,15 +23,15 @@ export default {
             isAppBar: 'getAppBar',
             isAppFooter: 'getAppFooter',
         })
-    }   
+    }
 }
 </script>
 <style lang="scss">
 .appPagePadding {
     padding: 48px 0px 56px 0px !important;
 
-    // @media screen and (min-width: 600px) {
-    //     padding: 48px 0px 0px 0px !important;
-    // }
+    @media screen and (min-width: 600px) {
+        padding: 48px 0px 0px 0px !important;
+    }
 }
 </style>

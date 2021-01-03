@@ -1,8 +1,6 @@
 <template>
-  <v-app id="app" style="height: 100vh">
-    <!-- <v-img src="./assets/background.png"> -->
-      <router-view />
-    <!-- </v-img> -->
+  <v-app id="app" :style="{'background-image': backageImage}">
+    <router-view />
   </v-app>
 </template>
 
@@ -10,12 +8,13 @@
 export default {
   name: "App",
   data: () => ({
-    //
+    backageImage: `url(${require('@/assets/animal2.jpg')})`
   }),
 };
 </script>
 <style lang="scss">
-// button {
-//   border-radius: 10px!important;
-// }
+#app {
+  height: 100vh;
+  background-size: cover;
+}
 </style>

@@ -7,37 +7,39 @@
         solo
         hideDetails
         class="mb-4"
+        v-model="name"
       ></v-text-field>
       <v-text-field
         placeholder="你的島名（必填）"
         solo
         hideDetails
+        v-model="island"
       ></v-text-field>
     </div>
-    <v-btn height="56px" color="#A7A7A7" @click="isDialog=true" class="white--text">繼續</v-btn>
-     <establish
-      :isdialog="isDialog"
-      @cancel="isDialog = false"
-      @build="submit"
-    ></establish>
+    <v-btn height="56px" color="#A7A7A7" @click="submit" class="white--text">繼續</v-btn>
   </div>
 </template>
 <script>
-import Establish from "@/components/Establish";
 export default {
   data(){
     return{
       isDialog: false,
+      name: null,
+      island: null
     }
-  },
-  components:{
-    Establish
   },
   methods: {
     submit() {
+      this.editUser();
       this.isDialog=false;
       this.$router.push({ path: "rooms" });
     },
+    editUser() {
+      this.$store.dispatch('verify', {
+        name: this.name,
+        island: this.island
+      })
+    }
   },
   mounted() {},
 };

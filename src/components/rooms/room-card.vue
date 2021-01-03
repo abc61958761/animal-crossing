@@ -1,13 +1,17 @@
 <template>
     <v-card>
-        <v-card-title class="headline orange--text text-h6">
-              機票/金礦收購哩數商品(如圖)~~都只各換一個要的快來~絕對不虧（最多三行）
+        <v-card-title 
+            class="headline 
+            orange--text 
+            text-h6"
+        >
+            {{room.name}}
         </v-card-title>
         <v-card-text class="text--character">
-            <div>島主：Carol</div>
+            <div>島主： carol</div>
             <div>開房時間：5/11 18:49:3</div>
-            <div>活動類型：免費活動</div>
-            <div>活動種類：大頭菜價 / 開放逛島</div>
+            <div>活動類型：{{room.activityType}}</div>
+            <div>活動種類：{{room.category}}</div>
             <div>目前排隊人數：3 / 10</div>
         </v-card-text>
         <v-card-actions>
@@ -25,9 +29,11 @@
 </template>
 <script>
 export default {
+    props: ['room'],
     methods: {
         joinRoom() {
-            this.$router.push({ path: "room" })
+            const roomId = this.room.id;
+            this.$router.push({ path: "room", query: { id: roomId } });
         }
     }
 }

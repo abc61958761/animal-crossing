@@ -25,8 +25,10 @@
     ></v-select>
     <v-select class="mb-2" hide-details label="想做什麼？" solo ></v-select>
     <v-layout wrap>
-      <v-flex  xs12 sm6 md6  v-for="(item, index) in 10" :key="index"> 
-        <room-card class="mb-2" 
+      <v-flex  xs12 sm6 md6  v-for="(room, index) in rooms" :key="index"> 
+        <room-card 
+        :room="room"
+        class="mb-2" 
         :class="{
           'mr-2': index%2 === 0 && !$vuetify.breakpoint.xs, 
           'ml-2': index%2 !== 0 && !$vuetify.breakpoint.xs
@@ -36,12 +38,18 @@
   </div>
 </template>
 <script>
+import { mapGetters } from 'vuex'
 import RoomCard from "@/components/rooms/room-card";
 
 export default {
   components: {
     "room-card": RoomCard,
   },
+  computed: {
+    ...mapGetters({
+        rooms: 'getRooms'
+    })
+  },   
   mounted() {},
 };
 </script>

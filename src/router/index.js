@@ -1,13 +1,14 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+
 import Layout from '@/layout/AppLayout';
 import HomePage from '@/views/HomePage';
 import Login from '@/views/Login';
 import Rooms from '@/views/Rooms';
 import Room from '@/views/Room';
 import MyRoom from '@/views/MyRoom';
-import Message from '@/views/Message'
-import Report from '@/views/Report'
+import Message from '@/views/Message';
+import Report from '@/views/Report';
 
 Vue.use(VueRouter)
 
@@ -19,6 +20,7 @@ Vue.use(VueRouter)
     children: [{
       path: '/',
       component: HomePage,
+      name: 'home',
       meta: {
         isAppBar: false,
         isAppFooter: false
@@ -27,6 +29,7 @@ Vue.use(VueRouter)
     {
       path: '/login',
       component: Login,
+      name: 'login',
       meta: {
         isAppBar: false,
         isAppFooter: false
@@ -93,8 +96,20 @@ export function createRouter(store) {
     } else {
       store.dispatch('setIsAppFooter', false);
     }
+
+    auth(to, next, store);
     next();
   })
 
   return router
+}
+
+const auth = (to, next, store) => {
+  const user = store.getters.getUser;
+
+  if (!user && to.name !== 'home') {
+    next({ path: '/' });
+  }
+  
+  next();
 }

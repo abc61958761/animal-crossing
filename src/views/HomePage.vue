@@ -10,7 +10,14 @@
 export default {
     methods: {
         login() {
-            this.$router.push({ path: "login" })
+            this.$store.dispatch('login');
+
+            const user = this.$store.getters.getUser;
+            if (user.certified) {
+                this.$router.push({ path: "rooms" });
+            } else {
+                this.$router.push({ path: "login" });
+            }
         }
     }
 }
